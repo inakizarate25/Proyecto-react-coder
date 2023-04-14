@@ -1,0 +1,99 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans:wght@200;300;400;600;700&family=Heebo:wght@200;300;500;700&family=Inconsolata:wght@300;600;700&family=Martian+Mono:wght@100;300;700&family=Work+Sans:wght@300;600;800&display=swap');
+
+:root {
+  --main: #FF004B;
+  --grey:#1f1e1e;
+  --white:#e7dede;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: var(--grey);
+  color: var(--white);
+  font-family: 'Anton', sans-serif;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Heebo', sans-serif;
+font-family: 'Inconsolata', monospace;
+font-family: 'Martian Mono', monospace;
+font-family: 'Work Sans', sans-serif;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cart-widget {
+ height: 50px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 18px;
+ font-weight: 500;
+
+}
+.cart-widget img {
+  height: 30px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+}
+ul li {
+  list-style: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px auto;
+  cursor: pointer;
+}
+
+
+ul li {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  }
+  ul li:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: var(--main);
+  transition: left .6s;
+  }
+  ul li:hover:after {
+  left: 0;
+  }
+
+@media screen and (min-width:768px) {
+  ul li {
+    font-size: 20px;
+
+  }
+}
