@@ -1,4 +1,5 @@
 import CartWidget from "../CartWidget/CartWidget"
+import logo from './assets/logo.svg'
 
 
 
@@ -7,7 +8,9 @@ const Navbar = () => {
     return (
 
              <nav>
-        <h1>PhoneLand</h1>
+        <a href="#">
+            <img src={logo} alt="logo" />
+        </a>
 
         <ul>
             <li>Celulares</li>
