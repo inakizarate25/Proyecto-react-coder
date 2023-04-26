@@ -34,6 +34,10 @@ const Navbar = () => {
       </ul>
 
       <div className="right">
+     
+
+
+
         <CartWidget/>
         <div className="bx bx-menu" id="menu-icon" onClick={()  => {
               const menu = document.querySelector('.menu-icon-img')
