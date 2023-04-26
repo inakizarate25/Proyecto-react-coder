@@ -1,18 +1,13 @@
 import CartWidget from "../CartWidget/CartWidget";
-import logo from "./assets/logo.png";
 import bars from './assets/bars.svg'
+import DarkMode from "../darkMode/DarkMode";
 
 const Navbar = () => {
-    // const menu = document.querySelector('.menu-icon-img')
-    // const navbar = document.querySelector('.navbar')
-    // menu.onclick = () => {
-    //     menu.classList.toggle('bx-x')
-    //     navbar.classList.toggle('open')
-    // }
+   
   return (
     <header>
       <a href="#" className="logo">
-        <img src={logo} alt=" logo" />
+       <h1>PHONELAND</h1>
       </a>
       <ul className="navbar">
         <li>
@@ -36,7 +31,7 @@ const Navbar = () => {
       <div className="right">
      
 
-
+      <DarkMode/>
 
         <CartWidget/>
         <div className="bx bx-menu" id="menu-icon" onClick={()  => {
