@@ -36,15 +36,19 @@ const Navbar = () => {
       <DarkMode/>
 
         <CartWidget/>
-        <div className="bx bx-menu" id="menu-icon" onClick={()  => {
-              const menu = document.querySelector('.menu-icon-img')
+        <label className="burger bx bx-menu" htmlFor="burger">
+  <input type="checkbox" id="burger" onClick={()  => {
+              const menu = document.querySelector('.burger')
               const navbar = document.querySelector('.navbar')
             
              
                menu.classList.toggle('bx-x')
-        navbar.classList.toggle('open')}}>
-
-          <img className="menu-icon-img" src={bars} /></div>
+        navbar.classList.toggle('open')}}/>
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
+       
       </div>
     </header>
   );
