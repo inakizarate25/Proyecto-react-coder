@@ -1,6 +1,8 @@
 import CartWidget from "../CartWidget/CartWidget";
 import bars from './assets/bars.svg'
 import DarkMode from "../darkMode/DarkMode";
+import './Navbar.css'
+
 
 const Navbar = () => {
    
@@ -38,8 +40,11 @@ const Navbar = () => {
               const menu = document.querySelector('.menu-icon-img')
               const navbar = document.querySelector('.navbar')
             
+             
                menu.classList.toggle('bx-x')
-        navbar.classList.toggle('open')}}><img className="menu-icon-img" src={bars} /></div>
+        navbar.classList.toggle('open')}}>
+
+          <img className="menu-icon-img" src={bars} /></div>
       </div>
     </header>
   );

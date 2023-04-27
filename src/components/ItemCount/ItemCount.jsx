@@ -1,5 +1,6 @@
 import { useState } from "react";
 import addCart from './assets/addCart.svg'
+import './ItemCounter.css'
 
 const itemCount = ({stock, initial, onAdd}) => {
     const [quantity, setQuantity] = useState(initial)

@@ -1,0 +1,41 @@
+.CardItem {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.img-info {
+  height: 400px;
+}
+.right-info {
+  width: 40%;
+  height: 600px;
+  gap: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 740px) {
+  .CardItem {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .right-info {
+    width: 300px;
+    height: 600px;
+    gap: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .img-info {
+    height: 260px;
+  }
+}

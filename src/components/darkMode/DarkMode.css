@@ -1,0 +1,13 @@
+.div-dark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dark-mode {
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+  }

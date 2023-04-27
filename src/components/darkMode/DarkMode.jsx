@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import sun from '../../imagenes/sun.svg'
 import moon from '../../imagenes/moon.svg'
+import './DarkMode.css'
 
 
 
 function DarkMode() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const mode = JSON.parse(localStorage.getItem('darkMode'));
+    return mode !== null ? mode : false;
+  });
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -18,6 +22,7 @@ function DarkMode() {
     } else {
       body.classList.remove('dark');
     }
+    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
   }, [isDarkMode]);
 
   return (

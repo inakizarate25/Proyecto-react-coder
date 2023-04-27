@@ -1,0 +1,28 @@
+.item-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+@media (max-width: 1098px) {
+  .item-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 200px;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 740px) {
+  .item-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 600px auto;
+  }
+}

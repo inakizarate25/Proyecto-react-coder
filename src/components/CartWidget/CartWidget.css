@@ -1,0 +1,12 @@
+.cart-widget {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.cart-widget img {
+  height: 30px;
+}
