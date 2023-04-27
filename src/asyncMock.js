@@ -12,12 +12,12 @@ const products = [
       },
       {
         id: 2,
-        category: "accesorios",
+        category: "consolas",
         stock: 1,
-       name: "Xiaomi Buds 3T Pro",
-       description: "Auriculares Inalambricos",
-        price: 72099,
-        img: "https://i.ibb.co/YTMTqZ0/auriculares-inalambricos-xiaomi-buds-3t-pro-bluetooth.png"
+       name: "PlayStation 5",
+       description: "950GB",
+        price: 480000,
+        img: "https://i.ibb.co/hRpc76G/ps5.png"
       },
       {
         id: 3,
@@ -28,6 +28,7 @@ const products = [
         price: 159999,
         img: "https://i.ibb.co/xfYH2TB/applewatch.png"
       }
+     
 ]
 
 export const getProducts = () => {
