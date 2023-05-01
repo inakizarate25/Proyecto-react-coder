@@ -5,7 +5,7 @@ const products = [
         id: 1,
         name: "IPhone 13 pro",
         price: 798999,
-        category: "Celulares",
+        category: "celulares",
         img: 'https://i.ibb.co/VjfJJ6n/iphone-13-pro.png',
         stock: 3,
         description: "128GB",
@@ -43,6 +43,13 @@ export const getProducts = () => {
     return new Promise ((resolve) => {
       setTimeout(() => {
         resolve(products.find(prod => prod.id === productId))
+      }, 2000);
+    })
+  }
+  export const getProductsByCategory = (productCategory) => {
+    return new Promise ((resolve) => {
+      setTimeout(() => {
+        resolve(products.find(prod => prod.category === productCategory))
       }, 2000);
     })
   }

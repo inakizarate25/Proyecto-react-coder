@@ -7,8 +7,10 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import Footer from './components/Footer'
 import './index.css'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
  <main>
+   
     <NavBar/>
     <ItemListContainer greeting={'BIENVENIDOS'}/>
     <Loader/>

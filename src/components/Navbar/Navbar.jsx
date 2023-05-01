@@ -6,15 +6,15 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <header>
-      <a href="#" className="logo">
+      <div className="logo">
         <h1>PHONELAND</h1>
-      </a>
+      </div>
       <ul className="navbar">
-        <li>
+        <li >
           <a href="#">Celulares</a>
         </li>
 
-        <li>
+        <li >
           <a href="#">Notebooks</a>
         </li>
 
@@ -43,7 +43,9 @@ const Navbar = () => {
               );
 
               menu.classList.toggle("bx-x");
-              itemListContainer.classList.toggle('margin')
+           
+                itemListContainer.classList.toggle('margin')
+     
 
               navbar.classList.toggle("open");
             }}
