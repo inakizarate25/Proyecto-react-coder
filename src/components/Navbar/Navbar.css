@@ -1,3 +1,6 @@
+*{
+  text-decoration: none;
+}
 /* navbar */
 header {
   position: sticky;
@@ -13,14 +16,16 @@ header {
   height: 70px;
 
 }
-a {
+.link-a {
   text-decoration: none;
+  color: var(--text-color);
 }
-.logo h1 {
+.logo-link {
   font-size: 20px;
   color: var(--text-color);
   text-decoration: none;
   transition: all 0.3s ease-out;
+  font-weight: 700;
 }
 
 .navbar {
@@ -30,7 +35,7 @@ a {
   gap: 16px;
   overflow: hidden;
 }
-.navbar a {
+.link-a {
   font-size: 1.1rem;
   color: var(--text-color);
   font-weight: 600;
@@ -38,6 +43,12 @@ a {
   margin: 0 12px;
   transition: all 0.5s ease;
   text-decoration: none;
+}
+.active {
+color: var(--main);
+font-size: 1.1rem;
+text-decoration: none;
+font-weight: 600;
 }
 .right {
   width: 150px;
@@ -102,23 +113,25 @@ ul {
   align-items: center;
   gap: 12px;
   height: 40px;
-}
-ul li {
   list-style: none;
-  font-size: 14px;
+}
+.link-a {
+  list-style: none;
+  font-size: 1.1rem;
   font-weight: 600;
   padding: 6px auto;
   cursor: pointer;
+  list-style: none;
 }
 
 
 
 /* hover link */
-a {
+.link-a {
   position: relative;
 }
 
-a::before {
+.link-a::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -132,7 +145,7 @@ a::before {
     transition: transform .3s ease-in-out;
   }
 
-a:hover::before {
+.link-a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }

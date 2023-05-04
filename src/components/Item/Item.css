@@ -67,7 +67,7 @@
 
 .img-container {
   position: relative;
-  width: 100%;
+  width: 98%;
   min-height: 200px;
   margin-top: 80px;
 }
@@ -85,7 +85,8 @@
 .item-img {
   position: absolute;
   display: block;
-  height: 220px;
+  height: 205px;
+
   margin: 0 auto;
   margin-top: -20px;
   left: 0;

@@ -1,29 +1,30 @@
 import CartWidget from "../CartWidget/CartWidget";
-import bars from "./assets/bars.svg";
 import DarkMode from "../darkMode/DarkMode";
 import "./Navbar.css";
+import { Link, NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (  ) => {
+
   return (
     <header>
       <div className="logo">
-        <h1>PHONELAND</h1>
+        <Link className="logo-link" to={'/'}>PHONELAND</Link>
       </div>
       <ul className="navbar">
         <li >
-          <a href="#">Celulares</a>
+          <NavLink className={({isActive}) => isActive ? 'active' : 'link-a'} to={'/category/celulares'}>Celulares</NavLink>
         </li>
 
         <li >
-          <a href="#">Notebooks</a>
+        <NavLink className={({isActive}) => isActive ? 'active' : 'link-a'} to={'/category/notebooks'}>Notebooks</NavLink>
         </li>
 
         <li>
-          <a href="#">Consolas</a>
+        <NavLink className={({isActive}) => isActive ? 'active' : 'link-a'} to={'/category/consolas'}>Consolas</NavLink>
         </li>
 
         <li>
-          <a href="#">Accesorios</a>
+        <NavLink className={({isActive}) => isActive ? 'active' : 'link-a'} to={'/category/acesorios'}>Accesorios</NavLink>
         </li>
       </ul>
 
