@@ -1,11 +1,14 @@
 import Item from '../Item'
 import './ItemList.css'
 
-const ItemList = ({products}) => {
+const ItemList = ({data = []}) => {
     return (
         <div className="listGroup">
-            {products.map(prod => <Item key={prod.id} {...prod}/>)}
+            {data.map((producto) => <Item key={producto.id} info={producto} />)}
+         
         </div>
+        
     )
 }
+
 export default ItemList

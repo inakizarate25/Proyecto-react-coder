@@ -1,28 +1,29 @@
 import { useEffect, useState } from "react"
-import { getProducts} from '../../asyncMock'
+import { products } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 import { useParams } from "react-router"
 
 
 const ItemListContainer = ({ greeting }) => {
-    const [products, setProducts] = useState([])
+   const [data, setData] = useState([])
 
-    const {categoryId} = useParams()
-    useEffect(() => {
-        console.log('Categoria: ', categoryId)
-    },[categoryId])
+   const {categoryId} = useParams()
 
 
-    useEffect(() => {
-        getProducts(categoryId)
-            .then(response => {
-                setProducts(response)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    },[categoryId])
+   useEffect(() => {
+    const getData = new Promise(resolve => {
+        setTimeout(() => {
+            resolve(products)
+        },500)
+    })
+    if(categoryId){
+        getData.then(res=> setData(res.filter(producto => producto.category === categoryId)) )
+    }else {
+        getData.then(res=> setData(res) )
+    }
+   },[categoryId])
+ 
 
 
     return(
@@ -31,7 +32,8 @@ const ItemListContainer = ({ greeting }) => {
             <h2>{greeting}</h2>
  
 
-            <ItemList className="item-list" products={products}/>
+           
+            <ItemList className="item-list" data={data}/>
         </div>
 
     )

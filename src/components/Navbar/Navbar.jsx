@@ -8,7 +8,7 @@ const Navbar = (  ) => {
   return (
     <header>
       <div className="logo">
-        <Link className="logo-link" to={'/'}>PHONELAND</Link>
+        <Link className="logo-link" to='/'>PHONELAND</Link>
       </div>
       <ul className="navbar">
         <li >
@@ -24,7 +24,7 @@ const Navbar = (  ) => {
         </li>
 
         <li>
-        <NavLink className={({isActive}) => isActive ? 'active' : 'link-a'} to={'/category/acesorios'}>Accesorios</NavLink>
+        <NavLink className={({isActive}) => isActive ? 'active' : 'link-a'} to={'/category/accesorios'}>Accesorios</NavLink>
         </li>
       </ul>
 
@@ -39,15 +39,8 @@ const Navbar = (  ) => {
             onClick={() => {
               const menu = document.querySelector(".burger");
               const navbar = document.querySelector(".navbar");
-              const itemListContainer = document.querySelector(
-                ".item-list-container"
-              );
-
+            
               menu.classList.toggle("bx-x");
-           
-                itemListContainer.classList.toggle('margin')
-     
-
               navbar.classList.toggle("open");
             }}
           />

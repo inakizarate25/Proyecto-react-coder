@@ -1,14 +1,14 @@
 import './Item.css'
 import { Link } from 'react-router-dom'
 
-const Item = ({id, name, img, price, stock}) => {
+const Item = ({info}) => {
     return (
 
 	<div className="item">
 		<div className="diamond-container">
 			<div className="diamond">
 				<div className="diamond-wrapper">
-					<div className="diamond-content">${price}</div>
+					<div className="diamond-content">${info.price}</div>
 				</div>
 			</div>
 		</div>
@@ -16,13 +16,13 @@ const Item = ({id, name, img, price, stock}) => {
 			<div className="content-wrapper">
 				<div className="img-container">
 					<div className="bg-square"></div>
-					<img className="item-img" src={img} />
+					<img className="item-img" src={info.img} />
 				</div>
 				<div className="content-text">
-					<div className="item-name">{name}</div>
+					<div className="item-name">{info.name}</div>
 				</div>
 			</div>
-			<Link to={`/item/${id}`} className="view-more-btn">Ver Mas +</Link>
+			<Link to={`/item/${info.id}`} className="view-more-btn">Ver Mas +</Link>
 		</div>
 	</div>
 

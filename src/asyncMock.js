@@ -1,6 +1,6 @@
 
 
-const products = [
+export const products = [
     {
         id: "1",
         name: "IPhone 13 pro",
@@ -37,29 +37,16 @@ const products = [
         price: 298000,
         img: "https://i.ibb.co/TWqZsTB/9d0524ae-6188-4f8f-8203-6293a9891608.png"
       }
-
-     
 ]
 
-export const getProducts = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(products)
-        }, 2000)
-    })
-  }
+
 
   export const getProductById = (productId) => {
     return new Promise ((resolve) => {
       setTimeout(() => {
-        resolve(products.find(prod => prod.id === productId))
+        resolve(products.find(product => product.id === productId))
       }, 500);
     })
   }
-  export const getProductsByCategory = (productCategory) => {
-    return new Promise ((resolve) => {
-      setTimeout(() => {
-        resolve(products.find(prod => prod.category === productCategory))
-      }, 2000);
-    })
-  }
+
+ 
