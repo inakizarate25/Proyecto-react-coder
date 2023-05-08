@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import { products } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
+import Loader from "../Loader/Loader"
 import './ItemListContainer.css'
 import { useParams } from "react-router"
 
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
    const [data, setData] = useState([])
 
    const {categoryId} = useParams()
@@ -15,7 +16,7 @@ const ItemListContainer = ({ greeting }) => {
     const getData = new Promise(resolve => {
         setTimeout(() => {
             resolve(products)
-        },500)
+        },1000)
     })
     if(categoryId){
         getData.then(res=> setData(res.filter(producto => producto.category === categoryId)) )
@@ -29,9 +30,9 @@ const ItemListContainer = ({ greeting }) => {
     return(
 
         <div className="item-list-container">
-            <h2>{greeting}</h2>
+           
  
-
+            <Loader/>
            
             <ItemList className="item-list" data={data}/>
         </div>

@@ -4,6 +4,7 @@
   overflow-x: hidden;
   margin: 0 auto;
   margin-top: 20px;
+  transition: all .5s ease-in;
 }
 
 .item {
