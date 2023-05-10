@@ -97,3 +97,23 @@
     font-weight:600;
   }
   
+
+  .alert {
+    position: relative;
+    height: 70px;
+    width: 120px;
+    background-color: var(--main);
+    font-size: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 78px;
+    left: 100px;
+    border-radius: 4px;
+    transition: all 1s ease-in;
+  }
+    .alert p {
+      padding: 12px;
+      font-size: 20px;
+      font-weight: 600;
+    }

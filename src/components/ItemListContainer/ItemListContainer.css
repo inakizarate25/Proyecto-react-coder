@@ -3,7 +3,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
- margin-top: 78px;
+  height: auto;
+
+
 }
 @media (max-width: 1098px) {
   .item-list-container {
@@ -22,6 +24,18 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
+    
 
   }
+}
+
+.banner {
+  padding: 8px 20px 20px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner img {
+  width: 82%;
 }

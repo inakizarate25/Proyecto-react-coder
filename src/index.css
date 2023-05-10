@@ -2,13 +2,15 @@
 
 :root {
   --main: #ff004b;
-  --background-color: #f0eaea;
+ --background-image: linear-gradient(to bottom, #c9c9c9, #d0cfd0, #d7d6d7, #dedcdd, #e6e2e3, #eae6e7, #efebec, #f3eff0, #f6f3f4, #f8f7f8, #fbfbfc, #ffffff);
   --text-color: #1f1e1e;
+  --background-color:#d0cfd0;
 }
 
 .dark {
-  --background-color: #1f1e1e;
+  --background-image: linear-gradient(to bottom, #121212, #151515, #171717, #1a1919, #1c1b1b, #1e1d1d, #201f20, #222122, #242425, #272627, #29292a, #2c2c2c);
   --text-color: #f0eaea;
+  --background-color:#151515;
 }
 
 * {
@@ -18,7 +20,9 @@
 }
 body {
   height: 100vh;
-  background-color: var(--background-color);
+ background-image: var(--background-image);
+ background-repeat: no-repeat;
+ background-attachment: fixed;
   color: var(--text-color);
   font-family: "Anton", sans-serif;
   font-family: "Fira Sans", sans-serif;
@@ -37,7 +41,7 @@ body {
   align-items: center;
 
 }
-main, .browser {
+main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -52,4 +56,28 @@ main, .browser {
   height: 100vh;
   width: 100%;
 
+}
+
+.not-found {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.not-found h2 {
+  font-size: 270px;
+  color: var(--text-color);
+}
+.not-found span {
+  font-size: 50px;
+  color: var(--text-color);
+}
+@media screen and (max-width:600px){
+  .not-found h2 {
+    font-size: 150px;
+  }
+  
 }

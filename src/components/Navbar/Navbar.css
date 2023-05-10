@@ -10,15 +10,15 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--background-color);
   padding: 28px 12%;
   z-index: 1000;
   height: 70px;
+  background-color: var(--background-color);
 
 }
 .link-a {
   text-decoration: none;
-  color: var(--text-color);
+color: var(--text-color);
 }
 .logo-link {
   font-size: 20px;
@@ -35,6 +35,7 @@ header {
   gap: 16px;
   overflow: hidden;
 }
+
 .link-a {
   font-size: 1.1rem;
   color: var(--text-color);
@@ -50,6 +51,7 @@ font-size: 1.1rem;
 text-decoration: none;
 font-weight: 600;
 }
+
 .right {
   width: 150px;
   display: flex;
@@ -70,7 +72,6 @@ font-weight: 600;
   .navbar a {
     padding: 5px 0;
     margin: 0 20px;
-    color: #f0eaea;
   }
 }
 @media (max-width: 1090px) {
@@ -93,6 +94,9 @@ font-weight: 600;
     transition: all 0.5s ease;
     gap: 28px;
   }
+  ul {
+    z-index: 100000;
+  }
 
   .navbar a {
     display: block;
@@ -105,6 +109,9 @@ font-weight: 600;
   .navbar.open {
     right: 1%;
   }
+  .active{
+    color: #d0cfd0;
+  }
 }
 
 ul {
@@ -114,6 +121,7 @@ ul {
   gap: 12px;
   height: 40px;
   list-style: none;
+
 }
 .link-a {
   list-style: none;

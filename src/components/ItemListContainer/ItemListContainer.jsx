@@ -6,7 +6,7 @@ import './ItemListContainer.css'
 import { useParams } from "react-router"
 
 
-const ItemListContainer = () => {
+const ItemListContainer = ({greeting}) => {
    const [data, setData] = useState([])
 
    const {categoryId} = useParams()
@@ -30,7 +30,7 @@ const ItemListContainer = () => {
     return(
 
         <div className="item-list-container">
-           
+           <div className="banner">{greeting}</div>
  
             <Loader/>
            

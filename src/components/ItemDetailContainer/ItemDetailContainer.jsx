@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
             .catch(error => {
                 console.log(error)
             })
-            console.log('Estas en el item con el ID: ', itemId)
+            
     }, [itemId])
 
     return (

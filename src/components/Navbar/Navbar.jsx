@@ -1,9 +1,16 @@
 import CartWidget from "../CartWidget/CartWidget";
 import DarkMode from "../darkMode/DarkMode";
+import Loader from '../Loader/index'
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = (  ) => {
+  const nav = () => {
+    const menu = document.querySelector(".burger");
+    const navbar = document.querySelector(".navbar");
+    menu.classList.toggle("bx-x");
+    navbar.classList.toggle("open");
+  }
 
   return (
     <header>
@@ -13,10 +20,6 @@ const Navbar = (  ) => {
       <ul className="navbar">
         <li >
           <NavLink className={({isActive}) => isActive ? 'active' : 'link-a'} to={'/category/celulares'}>Celulares</NavLink>
-        </li>
-
-        <li >
-        <NavLink className={({isActive}) => isActive ? 'active' : 'link-a'} to={'/category/notebooks'}>Notebooks</NavLink>
         </li>
 
         <li>
@@ -36,13 +39,7 @@ const Navbar = (  ) => {
           <input
             type="checkbox"
             id="burger"
-            onClick={() => {
-              const menu = document.querySelector(".burger");
-              const navbar = document.querySelector(".navbar");
-            
-              menu.classList.toggle("bx-x");
-              navbar.classList.toggle("open");
-            }}
+            onClick={nav}
           />
           <span></span>
           <span></span>

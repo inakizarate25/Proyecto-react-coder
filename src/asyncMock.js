@@ -27,15 +27,6 @@ export const products = [
        description: "Space Grey Aluminium",
         price: 159999,
         img: "https://i.ibb.co/xfYH2TB/applewatch.png"
-      },
-      {
-        id: "4",
-        category: 'notebooks',
-        stock: 10,
-       name: "Lenovo IdealPad",
-       description: "intel i9 500GB SSD 15GB RAM",
-        price: 298000,
-        img: "https://i.ibb.co/TWqZsTB/9d0524ae-6188-4f8f-8203-6293a9891608.png"
       }
 ]
 

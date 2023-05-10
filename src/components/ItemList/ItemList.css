@@ -1,9 +1,11 @@
 
 .listGroup {
     height: auto;
+    min-height: 78vh;
    display:flex ;
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
   gap: 28px;
+  max-width: 2000px;
   }
