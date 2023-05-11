@@ -1,10 +1,15 @@
 import cart from './assets/shopping-bag.svg'
 import './CartWidget.css'
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
+
+
 const CartWidget = () => {
+
     return (
         <div className='cart-widget'>
              <img src={cart} alt="Cart Widget" />
-             0
+           0
         </div>
        
     )

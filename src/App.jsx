@@ -6,7 +6,7 @@ import Error from './components/Error/error'
 import Banner from './components/Banner/Banner'
 import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import {CartProvider} from './context/CartContext'
+
 
 
 
