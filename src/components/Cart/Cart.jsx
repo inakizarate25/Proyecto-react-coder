@@ -3,8 +3,12 @@ import trash from './imgs/trash-alt.svg'
 import trash1 from './imgs/trash-blanco.svg'
 import cel from './imgs/m13 - copia.png'
 import ItemCount from '../ItemCount/ItemCount'
+import { useContext } from 'react'
 
 const Cart = () => {
+
+
+
     return(
         <section className='cart'>
 
@@ -15,21 +19,27 @@ const Cart = () => {
         <div className="cart-content">
 
 
-            <div className="item-cart">
-
-                <button className="delete tooltip">
-                        <img src={trash}/>
-                        <span className="tooltiptext">ELIMINAR</span>
-                </button>
-
-                <ItemCount/>
-		
-			    <img className="item-img" src={cel} />
-
-			    <div className="item-name">celular 1</div>
-
-            </div>
-
+        <div className="itemCart">
+		<div className="diamond-container">
+			<div className="diamond">
+				<div className="diamond-wrapper">
+					<div className="diamond-content">$10000</div>
+				</div>
+			</div>
+		</div>
+		<div className="item-wrapper">
+			<div className="content-wrapper">
+				<div className="img-containerCart">
+					<img className="item-imgCart" src={cel} />
+				</div>
+				<div className="content-text">
+					<div className="item-name">nombre celular</div>
+                    <p className='item-name cantidad'>5 UNIDADES</p>
+				</div>
+			</div>
+			<div className="view-more-btn">ELIMINAR</div>
+		</div>
+	</div>
 
         </div>
 
