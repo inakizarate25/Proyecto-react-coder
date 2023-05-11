@@ -6,6 +6,7 @@
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
+  color: var(--text-color);
 }
 .cart-widget img {
   height: 30px;

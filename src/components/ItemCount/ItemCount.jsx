@@ -17,8 +17,6 @@ const itemCount = ({stock, initial, onAdd}) => {
         }
     }
 
-   
-
     return (
       <div className="counter">
         <div className="controls">
@@ -31,7 +29,7 @@ const itemCount = ({stock, initial, onAdd}) => {
           </button>
         </div>
 
-        <button type="button" className="button"  onClick={  () => onAdd(quantity)}
+        <button type="button" className="button"  onClick={() => onAdd(quantity)}
           disabled={!stock}>
           <span className="button__text">Add Item</span>
           <span className="button__icon">
@@ -45,4 +43,5 @@ const itemCount = ({stock, initial, onAdd}) => {
 }
 
 export default itemCount
+
 
