@@ -7,50 +7,50 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
     const {cart, totalPrice, cleanCart} = useCartContext()
 
+if(cart.length === 0){
+    return(
+        <section className="cart">
+            <h2>CARRITO VACIO</h2>
+            <Link to={`/`} className='back'>Volver</Link>
+        </section>
+    )
+}else{
+    return(
+        <section className='cart'>
 
-    if (cart.length === 0){
-        return(
-            <section className="cart">
-                <h2>NO HAY ELEMENTOS EN EL CARRITO</h2>
+        <div className="cart-title">
+            <h2>TU CARRITO</h2>
+        </div>
 
-                <Link className='back' to={`/`}>Ver Productos</Link>
-            </section>
-        )
-    }else{
-        return(
-            <section className='cart'>
-    
-            <div className="cart-title">
-                <h2>TU CARRITO</h2>
-            </div>
-    
-            <div className="cart-content">
-    
-                {
-                    cart.map(product => <ItemCart key={product.id} product={product}/>)
-                }
-    
-            </div>
-    
-            <div className="total">
-                <span className="total-precio">
-                    Total compra: ${totalPrice()}
-                </span>
-                <div className="total2">
-                <button className="finalizar">Finalizar compra</button>
-    
-                <button className="vaciar">
-                    <img className="img-vaciar" src={trash1} />
-                    <span onClick={() => cleanCart()} className="lable">Vaciar carrito</span>
-                </button>
+        <div className="cart-content">
 
-                </div>
+            {
+                cart.map(product => <ItemCart key={product.id} product={product}/>)
+            }
+
+        </div>
+
+        <div className="total">
+            <span className="total-precio">
+                Total compra: ${totalPrice()}
+            </span>
+            <div className="total2">
+            <button className="finalizar">Finalizar compra</button>
+
+            <button className="vaciar">
+                <img className="img-vaciar" src={trash1} />
+                <span onClick={() => cleanCart()} className="lable">Vaciar carrito</span>
+            </button>
+
             </div>
-    
-    
-        </section>)
+        </div>
+
+
+    </section>)
+}
+       
     }
     
-}
+
 
 export default Cart
