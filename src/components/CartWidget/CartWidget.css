@@ -7,6 +7,10 @@
   font-weight: 500;
   cursor: pointer;
   color: var(--text-color);
+
+
+  font-weight: 600;
+
 }
 .cart-widget img {
   height: 30px;
