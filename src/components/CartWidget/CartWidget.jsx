@@ -1,15 +1,17 @@
+import { Link } from 'react-router-dom'
 import cart from './assets/shopping-bag.svg'
 import './CartWidget.css'
 import React from 'react'
+import {useCartContext} from '../../context/CartContext'
 
 const CartWidget = () => {
-
+    const {totalProducts} = useCartContext()
     return (
        
-        <div className='cart-widget'>
+        <Link to={`/cart`} className='cart-widget'>
              <img src={cart} alt="Cart Widget" />
-             0
-        </div>
+             <span>{totalProducts() || ''}</span>
+        </Link>
        
     )
 }

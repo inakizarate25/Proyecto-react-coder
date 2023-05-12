@@ -1,0 +1,176 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+ 
+    height: 90vh;
+}
+.cart-title {
+    width: 80%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-bottom: #ff004b solid 1px;
+}
+h2 {
+    text-align: center;
+    font-size: 50px;
+    padding: 12px;
+
+}
+
+.cart-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 18px;
+    width: 90%;
+}
+
+
+   .precio {
+    font-size: 18px;
+    font-weight: bold;
+   }
+
+   .total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+   }
+   .total-precio {
+    font-size: 30px
+   }
+
+   .total2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+padding: 18px;   }
+
+   .vaciar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 12px;
+    gap: 8px;
+    height: 40px;
+    width: 200px;
+    border: none;
+    background: var(--main);
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .lable {
+    line-height: 22px;
+    font-size: 17px;
+    color: #fff;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+  }
+  .img-vaciar {
+    width: 30px;
+  }
+  .vaciar:hover {
+    background: #e52441;
+  }
+  
+  .vaciar:hover .svg-icon {
+    animation: flickering 2s linear infinite;
+  }
+  
+  @keyframes flickering {
+    0% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    52% {
+      opacity: 1;
+    }
+  
+    54% {
+      opacity: 0;
+    }
+  
+    56% {
+      opacity: 1;
+    }
+  
+    90% {
+      opacity: 1;
+    }
+  
+    92% {
+      opacity: 0;
+    }
+  
+    94% {
+      opacity: 1;
+    }
+  
+    96% {
+      opacity: 0;
+    }
+  
+    98% {
+      opacity: 1;
+    }
+  
+    99% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .finalizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 12px;
+    gap: 8px;
+    height: 40px;
+    width: 200px;
+    border: none;
+    color: #f0eaea;
+    background: var(--main);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+  }
+ 
+.back{
+  height: 40px;
+  width: 120px;
+  background-color: var(--main);
+  color: #f0eaea;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.back:hover{
+  background-color: #e52441;
+}
+  
+
+
+  
+ 

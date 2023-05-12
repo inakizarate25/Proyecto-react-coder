@@ -33,22 +33,22 @@ const CartProvider = ({ children }) => {
     // TOTAL DE PRODUCTOS
     const totalProducts = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0)
 
-    // PRECIO TOTAL
+  // PRECIO TOTAL
     const totalPrice = () => {
         return cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
     }
 
 
     console.log('CARRITO ', cart)
-
-    return(
+   return(
         <CartContext.Provider value={{
             cleanCart,
             isInCart,
             removeProduct,
             addProduct,
             totalPrice,
-            totalProducts
+            totalProducts,
+            cart
         }}>
             {children}
         </CartContext.Provider>
