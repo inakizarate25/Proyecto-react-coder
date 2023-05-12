@@ -6,8 +6,8 @@ import Error from './components/Error/error'
 import Banner from './components/Banner/Banner'
 import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-
+import React from 'react'
+import CartProvider from './context/CartContext'
 
 
 
@@ -16,6 +16,7 @@ const App = () => {
     return (
         <main>
             <BrowserRouter>
+            <CartProvider>
                     <NavBar/>
                     <Routes>
                         <Route path='/' element={<ItemListContainer greeting={<Banner/>} />}/>
@@ -24,7 +25,7 @@ const App = () => {
 
                         <Route path='*' element={<Error/>}/>
                     </Routes>
-
+            </CartProvider>
             </BrowserRouter>
             <Footer/>
       </main>
