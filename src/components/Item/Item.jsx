@@ -1,9 +1,12 @@
 import './Item.css'
 import { Link } from 'react-router-dom'
+import React from 'react'
+
 
 const Item = ({info}) => {
-    return (
-
+	
+	
+	return (
 	<div className="item">
 		<div className="diamond-container">
 			<div className="diamond">

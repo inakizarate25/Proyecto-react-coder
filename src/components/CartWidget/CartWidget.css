@@ -15,3 +15,8 @@
 .cart-widget img {
   height: 30px;
 }
+.cart-widget span {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 2px;
+}
