@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { products } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import Loader from "../Loader/Loader"
+import Loader1 from "../Loader1/Loader1"
 import './ItemListContainer.css'
 import { useParams } from "react-router"
 
@@ -18,25 +19,27 @@ const ItemListContainer = ({greeting}) => {
             resolve(products)
         },1000)
     })
-    if(categoryId){
-        getData.then(res=> setData(res.filter(producto => producto.category === categoryId)) )
-    }else {
-        getData.then(res=> setData(res) )
-    }
+    {categoryId ?
+        getData.then(res=> setData(res.filter(producto => producto.category === categoryId)))
+        :
+        getData.then(res=> setData(res))}
    },[categoryId])
  
+   const [loading, setLoading] = useState(true)
 
+   useEffect(() => {
+    setTimeout(() => {
+        setLoading(false)
+    },1000)
+   })
 
     return(
-
-        <div className="item-list-container">
-           <div className="banner">{greeting}</div>
- 
-            <Loader/>
-           
-            <ItemList className="item-list" data={data}/>
-        </div>
-
+    data.length > 0 ?
+     (<div className="item-list-container">
+    <div className="banner">{greeting}</div>
+     <ItemList className="item-list" data={data}/>
+ </div>) : 
+ <Loader1/>
     )
 }
 export default ItemListContainer

@@ -10,7 +10,7 @@ const ItemCart = ({product}) => {
     <div className="diamond-container">
         <div className="diamond">
             <div className="diamond-wrapper">
-                <div className="diamond-content">{product.price}</div>
+                <div className="diamond-content">${product.price}</div>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@ const ItemCart = ({product}) => {
             </div>
             <div className="content-text">
                 <div className="item-name">{product.name}</div>
-                <p className='item-name cantidad'>{product.quantity}</p>
+                <p className='item-name cantidad'>Cantidad: {product.quantity}</p>
                 <p className='item-name cantidad'>${product.quantity*product.price}</p>
             </div>
         </div>

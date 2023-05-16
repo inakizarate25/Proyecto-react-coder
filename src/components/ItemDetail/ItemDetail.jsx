@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css'
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
+import Loader1 from "../Loader1/Loader1";
 
 
 
@@ -18,12 +19,17 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
     }, quantity)
   }
 
+  const [loading, setLoading] = useState(true)
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    },500)
+  })
 
-
-
-  return (
-    <div className="CardItem">
+  return loading ? <Loader1/>
+:
+<div className="CardItem">
       <div className="left-info">
         <img src={img} alt={name} className="img-info" />
       </div>
@@ -45,7 +51,6 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
          <p>Stock {stock}</p>
       </div>
     </div>
-  );
 };
 
 export default ItemDetail;
