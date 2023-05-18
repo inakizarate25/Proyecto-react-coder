@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import { products } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
-import Loader from "../Loader/Loader"
 import Loader1 from "../Loader1/Loader1"
 import './ItemListContainer.css'
 import { useParams } from "react-router"
+import {getFirestore, getDocs, collection, query , where} from 'firebase/firestore'
+import Footer from '../Footer/Footer'
 
 
 const ItemListContainer = ({greeting}) => {
@@ -14,15 +14,20 @@ const ItemListContainer = ({greeting}) => {
 
 
    useEffect(() => {
-    const getData = new Promise(resolve => {
-        setTimeout(() => {
-            resolve(products)
-        },1000)
-    })
-    {categoryId ?
-        getData.then(res=> setData(res.filter(producto => producto.category === categoryId)))
-        :
-        getData.then(res=> setData(res))}
+    const querydb = getFirestore()
+    const querycollection = collection(querydb, 'productos')
+
+    if(categoryId){
+        const queryfilter = query(querycollection, where('category', '==', categoryId), )
+        getDocs(queryfilter)
+        .then(res=> setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
+    }else{
+       getDocs(querycollection)
+        .then(res=> setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
+    }
+    
+       
+
    },[categoryId])
  
    const [loading, setLoading] = useState(true)
@@ -38,6 +43,7 @@ const ItemListContainer = ({greeting}) => {
      (<div className="item-list-container">
     <div className="banner">{greeting}</div>
      <ItemList className="item-list" data={data}/>
+     <Footer/>
  </div>) : 
  <Loader1/>
     )

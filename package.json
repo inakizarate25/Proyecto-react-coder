@@ -11,12 +11,15 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "fetch": "^1.1.0",
+    "firebase": "^9.22.0",
+    "gsap": "^3.11.5",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.1",
-    "styled-components": "^5.3.10"
+    "styled-components": "^5.3.10",
+    "swiper": "^9.3.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

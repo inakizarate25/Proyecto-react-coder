@@ -12,11 +12,14 @@
   --text-color: #f0eaea;
   --background-color:#151515;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   height: 100vh;
@@ -80,4 +83,15 @@ main {
     font-size: 150px;
   }
   
+}
+
+::-webkit-scrollbar{
+  background-color: var(--background-color);
+  width: 18px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #29292a;
+  border-radius: 4px;
+  width: 16px;
+  cursor: pointer;
 }
