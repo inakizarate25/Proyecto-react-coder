@@ -6,19 +6,9 @@ import ig from './assets/instagram (1).svg'
 import { useState, useEffect } from "react";
 
 const Footer = () => {
-  // const [showFooter, setshowFooter] = useState(false);
 
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     setshowFooter(true);
-  //   }, 2000);
-
-  //   return () => {
-  //     clearTimeout(timeout);
-  //   };
-  // }, []);
   return (
-    // <>{showFooter &&
+  
      <footer>
       <div className="top-footer">
       <div className="logo">

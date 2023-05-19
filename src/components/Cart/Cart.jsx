@@ -5,10 +5,15 @@ import ItemCart from '../ItemCart/ItemCart'
 import { Link } from 'react-router-dom'
 
 
+
+
 const Cart = () => {
     
 
 const {cart, totalPrice, cleanCart} = useCartContext()
+
+
+
 
 return cart.length === 0 ?
 <section className="cart">
@@ -30,7 +35,7 @@ return cart.length === 0 ?
         total compra: ${totalPrice()}
     </span>
     <div className="total1">
-    <Link to={`/orden`} className="finalizar">Finalizar compra</Link>
+    <Link to={`/checkout`} className="finalizar">Finalizar compra</Link>
     <button className="vaciar">
         <img className="img-vaciar" src={trash1} />
         <span onClick={()=> cleanCart()} className="lable">Vaciar carrito</span>

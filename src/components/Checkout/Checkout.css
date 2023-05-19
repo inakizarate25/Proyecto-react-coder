@@ -1,0 +1,66 @@
+.container {
+    height: 90vh;
+    width: 100vw;
+    display:grid;
+    place-items: center;
+}
+form {
+    height: 500px;
+    width: 380;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    box-shadow:
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    100px 100px 80px rgba(0, 0, 0, 0.07)
+  ;
+}
+.input {
+    max-width: 300px;
+    height: 44px;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+  }
+  .input-group {
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: column;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: .3rem;
+    font-size: .9rem;
+    margin-left: 4px;
+    font-weight: bold;
+    color: var(--text-color);
+    transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+  }
+  
+  .input:hover, .input:focus, .input-group:hover .input {
+    outline: none;
+    border-color: var(--text-color);
+  }
+  
+  .input-group:hover .label, .input:focus {
+    color: #05060fc2;
+  }
+  .send {
+    height: 44px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+  }
