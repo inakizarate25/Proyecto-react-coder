@@ -17,6 +17,7 @@ const itemCount = ({stock, initial, onAdd}) => {
         }
     }
 
+
     return (
       <div className="counter">
         <div className="controls">

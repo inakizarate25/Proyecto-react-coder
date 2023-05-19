@@ -27,6 +27,7 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
     },500)
   })
 
+
   return loading ? <Loader1/>
 :
 <div className="CardItem">
@@ -46,6 +47,7 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
               initial={1}
               stock={stock}
               onAdd={onAdd}
+              
             />
         }
          <p>Stock {stock}</p>
