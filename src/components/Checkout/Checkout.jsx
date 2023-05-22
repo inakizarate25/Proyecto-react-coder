@@ -9,6 +9,11 @@ const Checkout = () => {
     const {cart, totalPrice , cleanCart} = useCartContext()
 
         const [order, setOrder] = useState({
+          buyer: {
+            nombre: '',
+            email:'',
+            direccion:'',
+          },
                     items: cart.map(products => ({id: products.id, title: products.name, price: products.price, quantity: products.quantity})),
                     total: totalPrice(),
         });
