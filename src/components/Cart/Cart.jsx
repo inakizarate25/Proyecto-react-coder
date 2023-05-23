@@ -3,13 +3,13 @@ import trash1 from './imgs/trash-blanco.svg'
 import {useCartContext} from '../../context/CartContext'
 import ItemCart from '../ItemCart/ItemCart'
 import { Link } from 'react-router-dom'
+import Formulario from '../Checkout/Checkout'
 
 
 
 
 const Cart = () => {
     
-
 const {cart, totalPrice, cleanCart} = useCartContext()
 
 
@@ -35,14 +35,15 @@ return cart.length === 0 ?
         total compra: ${totalPrice()}
     </span>
     <div className="total1">
-    <Link to={`/checkout`} className="finalizar">Finalizar compra</Link>
+    <Link className="finalizar" to={`/checkout`}>Finalizar compra</Link>
     <button className="vaciar">
         <img className="img-vaciar" src={trash1} />
         <span onClick={()=> cleanCart()} className="lable">Vaciar carrito</span>
       </button>
     </div>
-
+    
 </div>
+
 </section>
 }
 

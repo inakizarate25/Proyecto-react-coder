@@ -8,9 +8,11 @@ import Loader1 from "../Loader1/Loader1";
 
 
 
+
+
 const ItemDetail = ({id, img, name, price,stock, category, description}) => {
   const [goToCart, setGoToCart] = useState(false)
-  const {addProduct} = useCartContext()
+  const {addProduct, removeProduct} = useCartContext()
 
   const onAdd = (quantity) => {
     setGoToCart(true)
@@ -26,6 +28,8 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
       setLoading(false)
     },500)
   })
+
+
 
 
   return loading ? <Loader1/>

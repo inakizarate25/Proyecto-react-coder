@@ -1,66 +1,50 @@
-.container {
-    height: 90vh;
-    width: 100vw;
-    display:grid;
-    place-items: center;
+.form-container{
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
 }
 form {
-    height: 500px;
-    width: 380;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    box-shadow:
-    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
-    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
-    100px 100px 80px rgba(0, 0, 0, 0.07)
-  ;
+  height: 550px;
+  width: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+outline: none;
 }
-.input {
-    max-width: 300px;
-    height: 44px;
-    background-color: #05060f0a;
-    border-radius: .5rem;
-    padding: 0 1rem;
-    border: 2px solid transparent;
-    font-size: 1rem;
-    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
-  }
-  .input-group {
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    flex-direction: column;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: .3rem;
-    font-size: .9rem;
-    margin-left: 4px;
-    font-weight: bold;
-    color: var(--text-color);
-    transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
-  }
-  
-  .input:hover, .input:focus, .input-group:hover .input {
-    outline: none;
-    border-color: var(--text-color);
-  }
-  
-  .input-group:hover .label, .input:focus {
-    color: #05060fc2;
-  }
-  .send {
-    height: 44px;
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main);
-    border-radius: 4px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-  }
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 600;
+  width: 370px;
+}
+input {
+  height: 50px;
+  width: 90%;
+  border: none;
+  padding: 4px;
+  font-size: 16px;
+  color: #1f1f1f;
+  border-radius: 4px;
+  background-color: rgb(181, 181, 181);
+}
+.enviar {
+  border: none;
+  cursor: pointer;
+}
+.form-title {
+  font-size: 40px;
+}
+.listo {
+  background: none;
+  border: none;
+  color: blanchedalmond;
+  font-size: 20px;
+  cursor: pointer;
+}

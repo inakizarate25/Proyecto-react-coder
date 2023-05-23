@@ -1,83 +1,84 @@
 import {useCartContext} from '../../context/CartContext'
-import { Link } from 'react-router-dom'
-import {addDoc, collection, getFirestore} from 'firebase/firestore'
+import {addDoc, collection, doc, getFirestore, updateDoc, writeBatch} from 'firebase/firestore'
 import { useState } from 'react'
-import Orden from '../Orden/Orden'
 import './Checkout.css'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import { Link, NavLink } from 'react-router-dom'
 
-const Checkout = () => {
-    const {cart, totalPrice , cleanCart} = useCartContext()
+const Formulario = () => {
+    const {cart, totalPrice, cleanCart} = useCartContext()
+    const [order, setOrder] = useState({
+      buyer: {
+        nombre: '',
+        email: '',
+        direccion: '',
+      },
+      items: cart.map(products => ({ id: products.id, title: products.name, price: products.price, quantity: products.quantity })),
+      total: totalPrice(),
+    });
 
-        const [order, setOrder] = useState({
-          buyer: {
-            nombre: '',
-            email:'',
-            direccion:'',
-          },
-                    items: cart.map(products => ({id: products.id, title: products.name, price: products.price, quantity: products.quantity})),
-                    total: totalPrice(),
-        });
+ 
 
-
-        const handleChange = (event) => {
-            const { name, value } = event.target;
-            setOrder((prevOrder) => ({
-              ...prevOrder,
-              [name]: value
-            }));
-          };
-    
-      const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(order); 
-      };
-    
-    const handleClick = () => {
+    const createOrder = () => {
         const db = getFirestore()
         const ordersCollection = collection(db, 'orders')
         addDoc(ordersCollection, order)
-        .then(({id}) => console.log(id))
-        cleanCart()
-    }
-
-return(
-    <div className='container'>
-         <form onSubmit={handleSubmit}>
-            <h2>TUS DATOS</h2>
-            <div className="input-group">
-            <label>
-      Nombre:
-      </label>
-      <input className='input' type="text" name="nombre" value={order.nombre} onChange={handleChange} />
-   
-            </div>
-   
-<div className="input-group">
-<label>
-      Email:
-      </label>
-      <input className='input' type="email" name="email" value={order.email} onChange={handleChange} />
-   
-</div>
-<div className="input-group">
-<label>
-      Dirección:
-      </label>
-      <input className='input' type="text" name="direccion" value={order.addres} onChange={handleChange} />
-
-</div>
- 
-
-    <Link className='send'  type="submit" onClick={handleClick}>Completar compra</Link>
-  </form>
-    </div>
-   
-)
+        .then(({id}) =>{
+            const MySwal = withReactContent(Swal)
+    
+    MySwal.fire({
+      text: `N° de orden ${id}`,
+      title:<p>Compra realizada con exito</p>,
+      icon: 'success',
+      showConfirmButton:true,
+      confirmButtonText:<button className='listo'>LISTO</button>,
+    })  
+    })
+    cleanCart()
   
 }
+  
+    const handleChange = e => {
+      const { name, value } = e.target;
+      setOrder(prevOrder => ({
+        ...prevOrder,
+        buyer: {
+          ...prevOrder.buyer,
+          [name]: value,
+        },
+      }));
+    };
+  
+    const handleSubmit = e => {
+      e.preventDefault();
+      console.log(order);
+    };
 
-export default Checkout
-
-
-
-
+   
+//   
+    return (
+        <section className="form-container">
+            <form onSubmit={handleSubmit}>
+                <h2 className='form-title'>Datos de compra</h2>
+        <label htmlFor='nombre'>
+          Nombre
+        </label>
+        <input type="text" id='nombre' name="nombre" value={order.buyer.nombre} onChange={handleChange} autoComplete='off' />
+        <label htmlFor='email'> 
+          Email
+        </label>
+        <input type="email" id='email' name="email" value={order.buyer.email} onChange={handleChange} autoComplete='off' />
+        <label htmlFor='direc'>
+          Dirección
+        </label>
+        <input type="text" id='direc' name="direccion" value={order.buyer.direccion} onChange={handleChange} autoComplete='off' />
+        <Link to={`/`} onClick={() => createOrder()} type="submit" className='back enviar'>Enviar</Link>
+      </form>
+        </section>
+      
+    );
+// 
+}
+  
+  export default Formulario

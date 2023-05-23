@@ -8,13 +8,7 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CartProvider from './context/CartContext'
 import Top from './components/Top/Top'
-import Checkout from './components/Checkout/Checkout'
-import Orden from './components/Orden/Orden'
-
-
-
-
-
+import Formulario from './components/Checkout/Checkout'
 
 
 const App = () => {
@@ -25,13 +19,12 @@ const App = () => {
             <BrowserRouter>
             <CartProvider>
                     <NavBar/>
-
                     <Routes>
                         <Route path='/' element={<ItemListContainer greeting={<Banner/>} />}/>
                         <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
                         <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
                         <Route path='/cart' element={<Cart/>}/>
-                        <Route path='/checkout' element={<Checkout/>}/>
+                        <Route path='/checkout' element={<Formulario/>}/>
                         <Route path='*' element={<Error/>}/>
                     </Routes>
             </CartProvider>
