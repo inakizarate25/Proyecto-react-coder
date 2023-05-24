@@ -1,22 +1,20 @@
+import './ItemListContainer.css'
 import { useEffect, useState } from "react"
 import ItemList from '../ItemList/ItemList'
 import Loader1 from "../Loader1/Loader1"
-import './ItemListContainer.css'
 import { useParams } from "react-router"
-import {getFirestore, getDocs, collection, query , where} from 'firebase/firestore'
+import { getDocs, collection, query , where} from 'firebase/firestore'
+import { db } from "../../firebase/config"
 import Footer from '../Footer/Footer'
 
 
 const ItemListContainer = ({greeting}) => {
    const [data, setData] = useState([])
-
    const {categoryId} = useParams()
 
 
    useEffect(() => {
-    const querydb = getFirestore()
-    const querycollection = collection(querydb, 'productos')
-
+    const querycollection = collection(db, 'productos')
     if(categoryId){
         const queryfilter = query(querycollection, where('category', '==', categoryId), )
         getDocs(queryfilter)

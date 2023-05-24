@@ -1,9 +1,10 @@
 .itemDetaliContainer {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   transition: all .50s ease-out;
 }
 

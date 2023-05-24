@@ -1,10 +1,11 @@
 import {useCartContext} from '../../context/CartContext'
-import {addDoc, collection, doc, getFirestore, updateDoc, writeBatch} from 'firebase/firestore'
+import {Timestamp, addDoc, collection, doc, getFirestore, updateDoc} from 'firebase/firestore'
 import { useState } from 'react'
 import './Checkout.css'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { db } from '../../firebase/config'
 
 const Formulario = () => {
     const {cart, totalPrice, cleanCart} = useCartContext()
@@ -16,12 +17,19 @@ const Formulario = () => {
       },
       items: cart.map(products => ({ id: products.id, title: products.name, price: products.price, quantity: products.quantity })),
       total: totalPrice(),
+      date:Timestamp.fromDate(new Date()),
     });
 
- 
+  
+
+ const actualizarStock = () => {
+
+  const orderDoc = doc(db, 'productos', '41S11tfwcGgngurhV6N1')
+  updateDoc(orderDoc,{stock: 8})
+ }
 
     const createOrder = () => {
-        const db = getFirestore()
+
         const ordersCollection = collection(db, 'orders')
         addDoc(ordersCollection, order)
         .then(({id}) =>{
@@ -36,8 +44,8 @@ const Formulario = () => {
     })  
     })
     cleanCart()
-  
-}
+    actualizarStock()
+  }
   
     const handleChange = e => {
       const { name, value } = e.target;
@@ -64,16 +72,16 @@ const Formulario = () => {
         <label htmlFor='nombre'>
           Nombre
         </label>
-        <input type="text" id='nombre' name="nombre" value={order.buyer.nombre} onChange={handleChange} autoComplete='off' />
+        <input required type="text" id='nombre' name="nombre" value={order.buyer.nombre} onChange={handleChange} autoComplete='off' />
         <label htmlFor='email'> 
           Email
         </label>
-        <input type="email" id='email' name="email" value={order.buyer.email} onChange={handleChange} autoComplete='off' />
+        <input required type="email" id='email' name="email" value={order.buyer.email} onChange={handleChange} autoComplete='off' />
         <label htmlFor='direc'>
           Dirección
         </label>
-        <input type="text" id='direc' name="direccion" value={order.buyer.direccion} onChange={handleChange} autoComplete='off' />
-        <Link to={`/`} onClick={() => createOrder()} type="submit" className='back enviar'>Enviar</Link>
+        <input required type="text" id='direc' name="direccion" value={order.buyer.direccion} onChange={handleChange} autoComplete='off' />
+        <Link to={`/`} onClick={() => createOrder()} className='back enviar'>Enviar</Link>
       </form>
         </section>
       

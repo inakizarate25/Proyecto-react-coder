@@ -18,6 +18,7 @@ const App = () => {
 
             <BrowserRouter>
             <CartProvider>
+                
                     <NavBar/>
                     <Routes>
                         <Route path='/' element={<ItemListContainer greeting={<Banner/>} />}/>

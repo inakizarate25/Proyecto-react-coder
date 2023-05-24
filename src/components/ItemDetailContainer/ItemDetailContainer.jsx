@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
-
-import ItemDetail from '../ItemDetail'
 import './ItemDetailContainer.css'
+import { useState, useEffect } from "react";
+import ItemDetail from '../ItemDetail'
+import Footer from '../Footer/Footer';
 import { useParams } from "react-router";
-import {getFirestore, getDoc, doc} from 'firebase/firestore'
+import { getDoc, doc} from 'firebase/firestore'
+import { db } from "../../firebase/config";
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
@@ -11,8 +12,8 @@ const ItemDetailContainer = () => {
     const { itemId } = useParams()
   
     useEffect(() => {
-const querydb = getFirestore()
-const querydoc = doc(querydb, 'productos', itemId)
+
+const querydoc = doc(db, 'productos', itemId)
 getDoc(querydoc)
     .then(res => setProduct({id: res.id, ...res.data()}))
     }, [itemId])
@@ -20,6 +21,7 @@ getDoc(querydoc)
     return (
         <div className="itemDetaliContainer">
             <ItemDetail {...product}/>
+            <Footer/>
         </div>
     )
 }
