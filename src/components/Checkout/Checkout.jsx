@@ -5,7 +5,7 @@ import './Checkout.css'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { Link } from 'react-router-dom'
-import { db } from '../../firebase/config'
+import { db } from '../../firebase/getFirestore'
 
 const Formulario = () => {
     const {cart, totalPrice, cleanCart} = useCartContext()

@@ -1,7 +1,7 @@
 import './ItemListContainer.css'
 import { useEffect, useState } from "react"
 import { getDocs, collection, query , where} from 'firebase/firestore'
-import { db } from "../../firebase/config"
+import { db } from "../../firebase/getFirestore"
 import ItemList from '../ItemList/ItemList'
 import Loader1 from '../Loader1'
 import Footer from '../Footer/Footer'
