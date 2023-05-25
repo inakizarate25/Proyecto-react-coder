@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20%;
   margin-top: 100px;
 }
 .img-info {
@@ -24,24 +23,33 @@
 }
 @media screen and (max-width: 740px) {
   .CardItem {
-    height: 100%;
+    height: 90vh;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-  }
-  .right-info {
-    width: 300px;
-    height: 600px;
-    gap: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
+  .right-info {
+    width: 300px;
+    height: 50%;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .cate {
+    align-self: flex-start;
+  }
+  .prec {
+    align-self: flex-start;
+  }
   .img-info {
     height: 260px;
+  }
+  .card-info-title {
+    font-size: 30px;
   }
 }
 .terminar {

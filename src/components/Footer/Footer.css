@@ -1,5 +1,5 @@
 footer {
-    width: 100%;
+  width: 98vw;
     height: 200px;
     display: flex;
     justify-content: space-around;
@@ -18,14 +18,14 @@ footer {
   }
 }
 .copy {
-    width: 350px;
+  width: 98vw;
     height: auto;
     padding: 8px;
     text-align: center;
     color: var(--text-color);
 }
 .bottom-footer {
-    width: 100%;
+  width: 98vw;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@ footer {
    
 }
 .redes {
-    width: 350px;
+  width: 98vw;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -65,6 +65,7 @@ footer {
     height: 70px;
     background-color: var(--background-color);
     flex-wrap: wrap;
+    width: 98vw;
   }
   .link-a {
     text-decoration: none;

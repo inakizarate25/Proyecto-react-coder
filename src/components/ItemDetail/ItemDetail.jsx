@@ -41,8 +41,8 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
       <div className="right-info">
         <h2 className="card-info-title">{name}</h2>
         <span>Decripcion: <strong>{description}</strong></span>
-        <p>Precio: <strong>${price}</strong></p>
-        <span>Categoria: <strong>{category}</strong></span>
+        <p className="prec">Precio: <strong>${price}</strong></p>
+        <span className="cate">Categoria: <strong>{category}</strong></span>
 
         {
           goToCart

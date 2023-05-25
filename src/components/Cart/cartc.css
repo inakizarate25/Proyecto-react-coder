@@ -6,8 +6,12 @@
     width: 100vw;
     gap: 50px;
     margin-top: 120px;
-    min-height: 83vh;
-  
+ height: 100vh;
+  }
+  @media screen and (max-width:740px){
+    .cart{
+      margin-top: 1000px;
+    }
   }
   .cart-title {
     width: 80%;
