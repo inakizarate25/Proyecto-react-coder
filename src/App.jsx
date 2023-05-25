@@ -1,24 +1,22 @@
+import './index.css'
 import NavBar from './components/Navbar/Navbar'
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Error from './components/Error/error'
-import Banner from './components/Banner/Banner'
+import Banner from './components/Banner'
 import Cart from './components/Cart/Cart'
-import './index.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CartProvider from './context/CartContext'
-import Top from './components/Top/Top'
-import Formulario from './components/Checkout/Checkout'
+import Top from './components/Top'
+import Formulario from './components/Checkout'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 const App = () => {
 
     return (
-        <main>
-
+    <main>
             <BrowserRouter>
             <CartProvider>
-                
                     <NavBar/>
                     <Routes>
                         <Route path='/' element={<ItemListContainer greeting={<Banner/>} />}/>
@@ -31,8 +29,7 @@ const App = () => {
             </CartProvider>
             </BrowserRouter>
         <Top/> 
-      </main>
-
+    </main>
     )
 }
 

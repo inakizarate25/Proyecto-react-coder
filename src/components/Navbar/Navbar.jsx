@@ -1,8 +1,8 @@
-import CartWidget from "../CartWidget/CartWidget";
-import DarkMode from "../darkMode/DarkMode";
-import Loader from '../Loader/index'
 import "./Navbar.css";
+import CartWidget from "../CartWidget/CartWidget";
+import DarkMode from '../darkMode'
 import { Link, NavLink } from "react-router-dom";
+
 
 const Navbar = (  ) => {
   const nav = () => {

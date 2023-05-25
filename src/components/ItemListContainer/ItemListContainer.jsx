@@ -1,11 +1,11 @@
 import './ItemListContainer.css'
 import { useEffect, useState } from "react"
-import ItemList from '../ItemList/ItemList'
-import Loader1 from "../Loader1/Loader1"
-import { useParams } from "react-router"
 import { getDocs, collection, query , where} from 'firebase/firestore'
 import { db } from "../../firebase/config"
+import ItemList from '../ItemList/ItemList'
+import Loader1 from '../Loader1'
 import Footer from '../Footer/Footer'
+import { useParams } from "react-router"
 
 
 const ItemListContainer = ({greeting}) => {

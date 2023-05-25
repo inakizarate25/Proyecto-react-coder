@@ -28,7 +28,7 @@ const Formulario = () => {
   updateDoc(orderDoc,{stock: 8})
  }
 
-    const createOrder = () => {
+    const createOrder = ( ) => {
 
         const ordersCollection = collection(db, 'orders')
         addDoc(ordersCollection, order)

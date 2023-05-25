@@ -21,7 +21,6 @@ getDoc(querydoc)
     return (
         <div className="itemDetaliContainer">
             <ItemDetail {...product}/>
-            <Footer/>
         </div>
     )
 }
