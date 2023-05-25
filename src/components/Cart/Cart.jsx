@@ -1,4 +1,4 @@
-import './Cart.css'
+import './cart.css'
 import trash1 from './imgs/trash-blanco.svg'
 import {useCartContext} from '../../context/CartContext'
 import ItemCart from '../ItemCart'
