@@ -10,7 +10,7 @@
   }
   @media screen and (max-width:740px){
     .cart{
-      margin-top: 1000px;
+      height: auto;
     }
   }
   .cart-title {

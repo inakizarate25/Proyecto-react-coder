@@ -20,13 +20,6 @@ const Formulario = () => {
       date:Timestamp.fromDate(new Date()),
     });
 
-  
-
- const actualizarStock = () => {
-
-  const orderDoc = doc(db, 'productos', '41S11tfwcGgngurhV6N1')
-  updateDoc(orderDoc,{stock: 8})
- }
 
     const createOrder = ( ) => {
 
@@ -44,7 +37,6 @@ const Formulario = () => {
     })  
     })
     cleanCart()
-    actualizarStock()
   }
   
     const handleChange = e => {
