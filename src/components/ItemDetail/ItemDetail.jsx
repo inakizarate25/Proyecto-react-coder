@@ -55,7 +55,7 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
             />
         }
          <p>
-          {stock === 0 ? 'Sin stock' : {stock}}
+        stock: {stock}
          </p>
       </div>
     </div>
