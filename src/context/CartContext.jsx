@@ -23,7 +23,7 @@ const CartProvider = ({ children }) => {
     const addProduct = (item, quantity) => {
         if(isInCart(item.id)){
             setCart(cart.map(product => {
-                return product.id === item.id ? {...product, quantity: product.quantity + quantity} : product
+                return product.id === item.id ? {...product, quantity: product.quantity + quantit, stock: product.stock} : product
             }))
         }else{
             setCart([...cart, {...item, quantity}])

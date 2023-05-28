@@ -17,7 +17,7 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
   const onAdd = (quantity) => {
     setGoToCart(true)
     addProduct({
-      id,img,name,price
+      id,img,name,price, stock
     }, quantity)
   }
 
@@ -48,13 +48,15 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
           goToCart
               ? <Link className="back" to={'/cart'}>Ir al Carrito</Link>
               : <ItemCount
-              initial={1}
+              initial={0}
               stock={stock}
               onAdd={onAdd}
               
             />
         }
-         <p>Stock {stock}</p>
+         <p>
+          {stock === 0 ? 'Sin stock' : {stock}}
+         </p>
       </div>
     </div>
 };

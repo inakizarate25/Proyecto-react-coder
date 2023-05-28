@@ -1,11 +1,12 @@
 import {useCartContext} from '../../context/CartContext'
-import {Timestamp, addDoc, collection, doc, getFirestore, updateDoc} from 'firebase/firestore'
+import {Timestamp, addDoc, collection, doc, writeBatch} from 'firebase/firestore'
 import { useState } from 'react'
 import './Checkout.css'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { Link } from 'react-router-dom'
 import { db } from '../../firebase/getFirestore'
+
 
 const Formulario = () => {
     const {cart, totalPrice, cleanCart} = useCartContext()
@@ -15,15 +16,33 @@ const Formulario = () => {
         email: '',
         direccion: '',
       },
-      items: cart.map(products => ({ id: products.id, title: products.name, price: products.price, quantity: products.quantity })),
+      items: cart.map((products) => ({ id: products.id, title: products.name, price: products.price, quantity: products.quantity })),
       total: totalPrice(),
       date:Timestamp.fromDate(new Date()),
     });
+    
+    // actualizar stock
+    const updateStock = async() => {
+     try {
+      const batch = writeBatch(db)
+      cart.map((product) => {
+        const stockActual = product.stock;
+        const nuevoStock = stockActual - product.quantity;
+        const docRef = doc(db, 'productos', product.id);
+        const docData = {
+          stock: nuevoStock,
+          };
+          batch.update(docRef, docData);
+          });
+          batch.commit();
+     } catch (error) {
+      console.log(error)
+     } 
+      }
 
+    const createOrder = async ( ) => {
 
-    const createOrder = ( ) => {
-
-        const ordersCollection = collection(db, 'orders')
+       const ordersCollection = collection(db, 'orders')
         addDoc(ordersCollection, order)
         .then(({id}) =>{
             const MySwal = withReactContent(Swal)
@@ -37,6 +56,7 @@ const Formulario = () => {
     })  
     })
     cleanCart()
+    updateStock()
   }
   
     const handleChange = e => {
@@ -82,3 +102,5 @@ const Formulario = () => {
 }
   
   export default Formulario
+
+
