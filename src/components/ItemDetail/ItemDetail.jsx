@@ -54,8 +54,7 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
               
             />
         }
-         <p>
-        stock: {stock}
+         <p>Stock: {stock}
          </p>
       </div>
     </div>
