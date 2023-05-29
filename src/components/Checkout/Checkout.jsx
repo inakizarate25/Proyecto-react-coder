@@ -41,8 +41,8 @@ const Formulario = () => {
       }
 
     const createOrder = async ( ) => {
-
-       const ordersCollection = collection(db, 'orders')
+      try {
+        const ordersCollection = collection(db, 'orders')
         addDoc(ordersCollection, order)
         .then(({id}) =>{
             const MySwal = withReactContent(Swal)
@@ -57,6 +57,9 @@ const Formulario = () => {
     })
     cleanCart()
     updateStock()
+      } catch (error) {
+        console.log(error)
+      }
   }
   
     const handleChange = e => {

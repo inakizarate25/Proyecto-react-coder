@@ -39,12 +39,7 @@
     align-items: center;
     flex-direction: column;
   }
-  .cate {
-    align-self: flex-start;
-  }
-  .prec {
-    align-self: flex-start;
-  }
+
   .img-info {
     height: 260px;
   }
@@ -62,7 +57,7 @@
   align-items: center;
   color: #f0eaea;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
 }
 .terminar:hover {

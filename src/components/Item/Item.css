@@ -57,6 +57,7 @@
 
 .diamond-content {
   transform: rotate(-45deg);
+  font-size: 15px;
 }
 
 .content-wrapper {
@@ -105,6 +106,7 @@
   font-size: 1.35em;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 12px;
 }
 
 .view-more-btn {
