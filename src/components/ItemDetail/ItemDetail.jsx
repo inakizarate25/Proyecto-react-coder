@@ -48,7 +48,7 @@ const ItemDetail = ({id, img, name, price,stock, category, description}) => {
           goToCart
               ? <Link className="terminar" to={'/cart'}>Ir al Carrito</Link>
               : <ItemCount
-              initial={0}
+              initial={1}
               stock={stock}
               onAdd={onAdd}
               
