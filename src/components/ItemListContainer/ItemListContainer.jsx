@@ -14,18 +14,22 @@ const ItemListContainer = ({greeting}) => {
 
 
    useEffect(() => {
-    const querycollection = collection(db, 'productos')
-    if(categoryId){
-        const queryfilter = query(querycollection, where('category', '==', categoryId), )
-        getDocs(queryfilter)
-        .then(res=> setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
-    }else{
-       getDocs(querycollection)
-        .then(res=> setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
+    const getProducts = async () => {
+        try {
+            const querycollection = collection(db, 'productos')
+            if(categoryId){
+                const queryfilter = query(querycollection, where('category', '==', categoryId), )
+                getDocs(queryfilter)
+                .then(res=> setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
+            }else{
+               getDocs(querycollection)
+                .then(res=> setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
-    
-       
-
+    getProducts()
    },[categoryId])
  
    const [loading, setLoading] = useState(true)

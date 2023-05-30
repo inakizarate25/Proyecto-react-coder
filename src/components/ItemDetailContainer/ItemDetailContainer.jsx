@@ -12,10 +12,16 @@ const ItemDetailContainer = () => {
     const { itemId } = useParams()
   
     useEffect(() => {
-
-const querydoc = doc(db, 'productos', itemId)
-getDoc(querydoc)
-    .then(res => setProduct({id: res.id, ...res.data()}))
+        const prodDesc = async () => {
+            try {
+                const querydoc = doc(db, 'productos', itemId)
+            getDoc(querydoc)
+                .then(res => setProduct({id: res.id, ...res.data()}))
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        prodDesc()
     }, [itemId])
 
     return (
